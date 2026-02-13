@@ -9,9 +9,6 @@
     "grant-types": [
       "client_credentials",
       "urn:ietf:params:oauth:grant-type:jwt-bearer"
-    ],
-    "grant-authorities-to-apps": [
-      "$XSAPPNAME(application,jobscheduler)"
     ]
   }
 }
