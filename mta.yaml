@@ -10,8 +10,8 @@ modules:
   - name: job_scheduler_DemoApp 
   - name: DemoApp_html_repo_runtime
   parameters:
-    disk-quota: 256M
-    memory: 256M
+    disk-quota: 512M
+    memory: 512M
 - name: DemoApp_ui_deployer
   type: com.sap.application.content
   path: .
