@@ -1,11 +1,14 @@
 {
-  "authenticationMethod": "route",
-  "routes": [
-    {
-      "source": "^/(.*)$",
-      "target": "$1",
-      "service": "html5-apps-repo-rt",
-      "authenticationType": "xsuaa"
-    }
-  ]
+  "name": "demoapp-approuter",
+  "version": "0.0.1",
+  "description": "Approuter Module",
+  "engines": {
+    "node": "^18.0.0"
+  },
+  "dependencies": {
+    "@sap/approuter": "^14.0.0"
+  },
+  "scripts": {
+    "start": "node node_modules/@sap/approuter/approuter.js"
+  }
 }

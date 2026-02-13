@@ -6,9 +6,9 @@ modules:
   type: approuter.nodejs
   path: demoapp-approuter
   requires:
+  - name: uaa_DemoApp
+  - name: job_scheduler_DemoApp 
   - name: DemoApp_html_repo_runtime
-  - name: uaa_DemoApp  # <--- Adaugat: Legatura cu XSUAA
-  - name: job_scheduler_DemoApp # <--- Adaugat: Legatura cu Job Scheduler
   parameters:
     disk-quota: 256M
     memory: 256M
