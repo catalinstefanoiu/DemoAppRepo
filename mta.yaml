@@ -7,6 +7,8 @@ modules:
   path: demoapp-approuter
   requires:
   - name: DemoApp_html_repo_runtime
+  - name: uaa_DemoApp  # <--- Adaugat: Legatura cu XSUAA
+  - name: job_scheduler_DemoApp # <--- Adaugat: Legatura cu Job Scheduler
   parameters:
     disk-quota: 256M
     memory: 256M
@@ -43,8 +45,17 @@ resources:
   parameters:
     service: html5-apps-repo
     service-plan: app-host
-build-parameters:
-  before-all:
-  - builder: custom
-    commands:
-    - npm install
+# --- RESURSE NOI ADAUGATE MAI JOS ---
+- name: uaa_DemoApp
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./xs-security.json # Citeste fisierul modificat mai sus
+    service: xsuaa
+    service-plan: application
+- name: job_scheduler_DemoApp
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: jobscheduler
+    service-plan: lite # Folosim planul lite pentru Trial
+    config:
+      enable-xsuaa-support: true # Activeaza legatura cu securitatea
