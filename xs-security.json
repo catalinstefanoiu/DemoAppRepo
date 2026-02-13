@@ -1,0 +1,17 @@
+{
+  "xsappname": "demoapp",
+  "tenant-mode": "dedicated",
+  "description": "Security profile of called application",
+  "scopes": [],
+  "attributes": [],
+  "role-templates": [],
+  "oauth2-configuration": {
+    "grant-types": [
+      "client_credentials",
+      "urn:ietf:params:oauth:grant-type:jwt-bearer"
+    ],
+    "grant-authorities-to-apps": [
+      "$XSAPPNAME(application,jobscheduler)"
+    ]
+  }
+}

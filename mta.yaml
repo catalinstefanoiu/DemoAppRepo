@@ -33,6 +33,7 @@ modules:
     builder: custom
     commands:
     - npm install  
+    - npm install --save-dev bestzip rimraf
     - npm run build
     supported-platforms: []
 resources:
